@@ -1,0 +1,48 @@
+{
+    "manifest_version": 3,
+    "name": "AI截图分析助手",
+    "version": "1.0",
+    "description": "截取网页并使用AI分析图像内容",
+    "permissions": [
+      "activeTab",
+      "storage",
+      "commands",
+      "tabs"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+      }
+    },
+    "commands": {
+      "take-screenshot": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+S",
+          "mac": "Command+Shift+S"
+        },
+        "description": "截取当前页面"
+      },
+      "select-area-screenshot": {
+        "suggested_key": {
+          "default": "Ctrl+Shift+A",
+          "mac": "Command+Shift+A"
+        },
+        "description": "选择区域截图"
+      }
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "js": ["marked.min.js", "content.js"],
+      "css": ["content.css"]
+    }],
+    "options_ui": {
+      "page": "options.html",
+      "open_in_tab": false
+    }
+  }

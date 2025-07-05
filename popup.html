@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 200px;
+      padding: 10px;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px 0;
+      background-color: #4285f4;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #3367d6;
+    }
+    .shortcut {
+      color: #666;
+      font-size: 12px;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="margin-top:0;font-size:16px;">AI截图分析助手</h2>
+  
+  <button id="full-screenshot">全屏截图</button>
+  <button id="area-screenshot">区域截图</button>
+  <button id="open-settings">设置</button>
+  
+  <div class="shortcut">
+    <p style="margin:5px 0;">全屏截图: Ctrl+Shift+S</p>
+    <p style="margin:5px 0;">区域截图: Ctrl+Shift+A</p>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>
